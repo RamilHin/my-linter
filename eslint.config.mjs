@@ -25,7 +25,9 @@ import stylistic from '@stylistic/eslint-plugin';
 
 export default [
   {
-    files: ['assets/**/*.ts', 'src/**/*.ts', 'lib/**/*.ts'],
+    files: ['assets/**/*.ts', 'src/**/*.ts', 'lib/**/*.ts'], //Everything basically
+    // files: ['assets/Script/**/*.ts'], //Just custom scripts
+    
     languageOptions: {
       parser: parserTs,
       parserOptions: {
@@ -56,7 +58,7 @@ export default [
       '@typescript-eslint/no-non-null-assertion': 'off', // allow the ! operator
 
       //Stylistic Spaces
-      'indent': ['error', 4, { SwitchCase: 1 }],
+      '@stylistic/indent': ['error', 4, { SwitchCase: 1 }], // Works better than @typescript-eslint/indent for decorators
       'space-before-blocks': ['error', 'always'],
       'keyword-spacing': ['error', { 'before': true, 'after': true }],
       'space-infix-ops': 'error',
@@ -141,11 +143,12 @@ export default [
           message: 'Static class fields are disallowed unless they are readonly. Consider using alternative design pattern maybe?',
         },
 
-        //Magic strings test - too noisy, maybe later
+        //Magic strings test - too noisy, maybe later - broken :(
         // {
         //   selector: "Literal[value][parent.type!='Property'][parent.type!='ImportDeclaration'][parent.type!='ExportNamedDeclaration'][parent.type!='ExportAllDeclaration'][parent.type!='TSLiteralType'][value.type='string']",
         //   message: "Avoid using magic strings. Define string constants instead.",
         // },
+
         // // Disallow private methods - Ramil's preference :)
         // {
         //   selector: 'MethodDefinition[accessibility="private"]',
@@ -213,7 +216,6 @@ export default [
           "format": ["camelCase"],
           "leadingUnderscore": "forbid"
         },
-
         {
           "selector": "classProperty",
           "modifiers": ["private"],
@@ -235,7 +237,12 @@ export default [
           "selector": "accessor",
           "modifiers": ["protected"],
           "format": ["camelCase"],
-        }
+        },
+        // Disable naming convention for object literal methods (e.g., { visible() {} })
+        {
+          "selector": "objectLiteralMethod",
+          "format": null
+        },
       ],
     },
   },
