@@ -1,4 +1,5 @@
 // Ramil's Linter Settings to replace Stephen :)
+// Version: Oct 2025
 
 import eslintPluginTs from '@typescript-eslint/eslint-plugin';
 import parserTs from '@typescript-eslint/parser';
@@ -56,8 +57,8 @@ export default [
       'template-curly-spacing': ['error', 'never'],
 
        // discourage use of 'any' type
-        '@typescript-eslint/no-unused-vars': ['warn', { args: 'all', argsIgnorePattern: '^_' }], // warn for unused parameters, allow _-prefixed
-        '@typescript-eslint/no-inferrable-types': 'off', // allow explicit types on declarations
+      '@typescript-eslint/no-unused-vars': ['warn', { args: 'all', argsIgnorePattern: '^_' }], // warn for unused parameters, allow _-prefixed
+      '@typescript-eslint/no-inferrable-types': 'off', // allow explicit types on declarations
       '@typescript-eslint/no-non-null-assertion': 'off', // allow the ! operator
 
       //Stylistic Spaces
@@ -115,7 +116,7 @@ export default [
       "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
       "constructor-super": "error",
       
-      "quotes": ["warn", "single", { "avoidEscape": true }],
+      "quotes": ["error", "single", { "avoidEscape": true }],
 
       // Require explicit return types for functions and class methods
       '@typescript-eslint/explicit-module-boundary-types': 'warn',

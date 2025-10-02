@@ -12,7 +12,6 @@
     "eslint": "^9.36.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "gameLint": "eslint assets/Script/**/*.ts",
     "lint": "eslint assets/**/*.ts"
   },
