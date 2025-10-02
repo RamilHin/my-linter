@@ -11,6 +11,7 @@ import stylistic from '@stylistic/eslint-plugin';
 //
 // 2. Add to your package.json scripts section:
 //    "lint": "eslint assets/**/*.ts"
+//    "gameLint": "eslint assets/Script/**/*.ts",
 //
 // 3. Run in terminal:
 //    npm run lint
