@@ -40,7 +40,7 @@ export default [
     },
   
     rules: {
-      "prefer-const": "warn",
+      "prefer-const": "error",
       "no-const-assign": "error",
       "no-var": "error",
 
@@ -50,9 +50,9 @@ export default [
       'prefer-template': ['error'],
       'template-curly-spacing': ['error', 'never'],
 
-      '@typescript-eslint/no-explicit-any': 'warn', // discourage use of 'any' type
-      '@typescript-eslint/no-unused-vars': 'error',
-      '@typescript-eslint/no-inferrable-types': 'off', // allow explicit types on declarations
+       // discourage use of 'any' type
+        '@typescript-eslint/no-unused-vars': ['warn', { args: 'all', argsIgnorePattern: '^_' }], // warn for unused parameters, allow _-prefixed
+        '@typescript-eslint/no-inferrable-types': 'off', // allow explicit types on declarations
       '@typescript-eslint/no-non-null-assertion': 'off', // allow the ! operator
 
       //Stylistic Spaces
@@ -83,7 +83,7 @@ export default [
       'default-param-last': ['error'],
       'no-param-reassign': ['warn', { props: false }], // allow reassigning function parameters but not their properties
       'prefer-spread': 'error',
-      'function-paren-newline': ['error', 'consistent'],
+      // 'function-paren-newline': ['error', 'consistent'],
       'prefer-arrow-callback': ['error', { allowNamedFunctions: false, allowUnboundThis: true }],
       'arrow-spacing': ['error', { before: true, after: true }],  
 
