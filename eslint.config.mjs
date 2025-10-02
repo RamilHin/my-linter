@@ -6,6 +6,8 @@ import stylistic from '@stylistic/eslint-plugin';
 
 // Usage:
 //
+// 0. Drag this eslint.config.mjs file to your project root
+//
 // 1. Install dependencies:
 //    npm install -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser @stylistic/eslint-plugin
 //

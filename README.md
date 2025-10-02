@@ -2,12 +2,24 @@
 
  * Setup Instructions:
   
-  1. Install dependencies:
-     ```npm install -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser @stylistic/eslint-plugin```
+1. Copy `eslint.config.mjs` to the root of your project folder.
 
-   2. Include package.json scripts section for ```"lint": "eslint assets/**/*.ts"``` 
+2. Install dependencies:
+   ```sh
+   npm install -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser @stylistic/eslint-plugin
+   ```
 
-   2. Run in terminal ``` npm start lint ```
+3. Add a script to your `package.json`:
+   ```json
+   "scripts": {
+     "lint": "eslint assets/**/*.ts"
+   }
+   ```
+
+4. Run the linter in your terminal:
+   ```sh
+   npm run lint
+   ```
   
 #### VS Code users
 
