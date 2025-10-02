@@ -1,4 +1,4 @@
-// Ramil's Linter Settings to replace Stephen :)
+// Ramil's Linter Settings for Everi-Legacy styling
 // Version: Oct 2025
 
 import eslintPluginTs from '@typescript-eslint/eslint-plugin';
@@ -146,6 +146,14 @@ export default [
           selector: 'PropertyDefinition[static=true][readonly!=true]',
           message: 'Static class fields are disallowed unless they are readonly. Consider using alternative design pattern maybe?',
         },
+
+        // -------- RAMIL's PERSONAL PREFERENCES --------
+
+        // // Custom: Disallow non-private fields with property decorators - Ramil's preference
+        // {
+        //   selector: 'PropertyDefinition[decorators.length>0][accessibility!="private"]',
+        //   message: 'Fields with property decorators must be private. Use Getter/Setter if needed publicly.',
+        // },
 
         //Magic strings test - too noisy, maybe later - broken :(
         // {
